@@ -1,12 +1,13 @@
 FROM postgres:9.6-alpine
 
-ENV POSTGIS_VERSION='2.4.4' \
-    CGAL_VERSION='4.11.2' \
-    SFCGAL_VERSION='1.3.5'
+ENV TIMEZONE="America/Sao_Paulo" \
+    POSTGIS_VERSION="2.4.4" \
+    CGAL_VERSION="4.11.2" \
+    SFCGAL_VERSION="1.3.5"
 
 RUN apk --no-cache upgrade && \
     apk --no-cache add tzdata && \
-    cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
+    cp /usr/share/zoneinfo/"${TIMEZONE}" /etc/localtime && \
     \
     apk --no-cache \
         add --virtual .build-deps \

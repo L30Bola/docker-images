@@ -2,7 +2,8 @@ FROM alpine:3.8
 
 LABEL maintainer="Leonardo Godoy <leonardoggavellar@gmail.com"
 
-ENV HTTPD_HOME="/etc/apache2" \
+ENV TIMEZONE="America/Sao_Paulo" \
+    HTTPD_HOME="/etc/apache2" \
     HTTPD_PID="/run/apache2" \
     HTTPD_LOG="/var/log/apache2" \
     HTTPD_DOCUMENT_ROOT="/var/www/localhost/htdocs" \
@@ -28,7 +29,7 @@ RUN apk --no-cache upgrade && \
                        php7-session \
                        php7-xml  \
                        tzdata && \
-    cp -f /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
+    cp -f /usr/share/zoneinfo/"${TIMEZONE}" /etc/localtime && \
     wget -O- https://github.com/nilsteampassnet/TeamPass/archive/"${TEAMPASS_VERSION}".tar.gz | tar -zxf - -C "${HTTPD_DOCUMENT_ROOT}" && \
     mv "${HTTPD_DOCUMENT_ROOT}"/TeamPass-"${TEAMPASS_VERSION}" "${HTTPD_DOCUMENT_ROOT}"/teampass && \
     sed -i '/date.timezone/s/.*/date.timezone = America\/Sao_Paulo/' /etc/php7/php.ini && \
