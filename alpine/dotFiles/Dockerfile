@@ -6,7 +6,7 @@ ENV TIMEZONE="America/Sao_Paulo" \
     DOTFILES_REPO="https://github.com/l30bola/dotFiles.git" \
     SHELLCHECK_STABLE_BIN_URL="https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz"
 
-RUN apk --no-cache add git vim bash bash-completion tzdata && \
+RUN apk --no-cache add git vim bash bash-completion tmux tzdata && \
     cp -f /usr/share/zoneinfo/"${TIMEZONE}" /etc/localtime && \
     apk del tzdata && \
     git clone "${DOTFILES_REPO}" "${HOME}"/.vim && \
