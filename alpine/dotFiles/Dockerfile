@@ -12,7 +12,7 @@ RUN apk --no-cache add git vim bash bash-completion tmux tzdata && \
     git clone "${DOTFILES_REPO}" "${HOME}"/.vim && \
     "${HOME}"/.vim/prepareHome.sh all https && \
     wget "${SHELLCHECK_STABLE_BIN_URL}" -O /tmp/shellcheck.tar.xz && \
-    tar Jxf /tmp/shellcheck.tar.gz -C /tmp/ && \
+    tar Jxf /tmp/shellcheck.tar.xz -C /tmp/ && \
     mv /tmp/shellcheck-stable/shellcheck /usr/local/bin/ && \
     rm -rf /tmp/shellcheck-stable /tmp/shellcheck.tar.gz
 
