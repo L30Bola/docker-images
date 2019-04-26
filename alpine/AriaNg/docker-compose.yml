@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+    aria2:
+        build:
+            context: ./aria2
+        image: l30bola/aria2
+        networks:
+            - network
+        ports:
+            - target: 6800
+              published: 6800
+              protocol: tcp
+              mode: host
+    ariang:
+        build:
+            context: ./ariang
+        image: l30bola/ariang:1.1.0
+        networks:
+            - network
+        ports:
+            - target: 80
+              published: 80
+              protocol: tcp
+              mode: host
+networks:
+    network:

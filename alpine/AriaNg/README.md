@@ -1,5 +1,5 @@
-# [Aria2](https://github.com/aria2/aria2) com [AriaNg](https://github.com/mayswind/AriaNg) no [Alpine Linux](https://alpinelinux.org/) no [Docker Hub](https://hub.docker.com/r/library/alpine/)
+# [Aria2](https://github.com/aria2/aria2) em modo RPC & [AriaNg](https://github.com/mayswind/AriaNg) no [Alpine Linux](https://alpinelinux.org/), utilizando [Nginx](https://github.com/nginx/nginx) no [Docker Hub](https://hub.docker.com/r/library/alpine/)
 
-Imagem que constrói, utilizando a imagem base do Alpine Linux, instalando todas as dependências para se utilizar o AriaNG.
+No diretório ```aria2``` se encontra a imagem, utilizando a imagem base do Alpine Linux, para executar o Aria2 em modo RPC.
 
-Ainda WIP.
+No diretório ```ariang``` se encontra a imagem, utilizando a imagem base do Alpine Linux, para servir o AriaNg utilizando Nginx, após construir do source.
