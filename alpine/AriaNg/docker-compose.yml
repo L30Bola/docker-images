@@ -4,6 +4,8 @@ services:
         build:
             context: ./aria2
         image: l30bola/aria2
+        volumes:
+            - ./downloads:/var/lib/aria2
         networks:
             - network
         ports:
