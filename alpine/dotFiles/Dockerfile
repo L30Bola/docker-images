@@ -10,7 +10,7 @@ RUN apk --no-cache add git vim bash bash-completion tmux ncurses tzdata && \
     cp -f /usr/share/zoneinfo/"${TIMEZONE}" /etc/localtime && \
     apk del tzdata && \
     git clone "${DOTFILES_REPO}" "${HOME}"/.vim && \
-    "${HOME}"/.vim/prepareHome.sh all https && \
+    "${HOME}"/.vim/prepareHome.sh all https force && \
     wget "${SHELLCHECK_STABLE_BIN_URL}" -O /tmp/shellcheck.tar.xz && \
     tar Jxf /tmp/shellcheck.tar.xz -C /tmp/ && \
     mv /tmp/shellcheck-stable/shellcheck /usr/local/bin/ && \
