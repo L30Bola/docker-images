@@ -1,4 +1,6 @@
-# T-50 build and usage container
+# T-50 
+
+This container builds [T50](https://gitlab.com/fredericopissarra/t50), the mixed packet injector tool. 
 
 ## To run and use t50, you must pass a capability or run the container privileged (which is not the best practice):
 
